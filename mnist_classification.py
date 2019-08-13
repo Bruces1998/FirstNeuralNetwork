@@ -46,7 +46,7 @@ model.add(Dense(128, activation="sigmoid"))
 model.add(Dense(10, activation="softmax"))
 
 print("[INFO] training network.....")
-sgd = SGD(0.01)
+sgd = SGD(0.1)
 model.compile(loss="categorical_crossentropy", optimizer=sgd, metrics=["accuracy"])
 H = model.fit(trainX, trainY, validation_data=(testX, testY), epochs=100, batch_size=128)
 print("[INFO] evaluating network.....")
